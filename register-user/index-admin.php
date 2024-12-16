@@ -44,17 +44,9 @@ include "include1/header.php";
                      <div class="social_icon">
                         <i class="fa fa-facebook"></i>
                      </div>
-                     <div class="social_cont">
-                        <ul>
-                           <li>
-                              <span><strong>35k</strong></span>
-                              <span>Friends</span>
-                           </li>
-                           <li>
-                              <span><strong>128</strong></span>
-                              <span>Feeds</span>
-                           </li>
-                        </ul>
+                     <div class=" text-center my-3">
+                        <h4 class="text-success">Total Buyleads</h4>
+                       <h5>5645646</h5>
                      </div>
                   </div>
                </div>
@@ -63,17 +55,9 @@ include "include1/header.php";
                      <div class="social_icon">
                         <i class="fa fa-twitter"></i>
                      </div>
-                     <div class="social_cont">
-                        <ul>
-                           <li>
-                              <span><strong>584k</strong></span>
-                              <span>Followers</span>
-                           </li>
-                           <li>
-                              <span><strong>978</strong></span>
-                              <span>Tweets</span>
-                           </li>
-                        </ul>
+                     <div class=" text-center my-3">
+                        <h4 class="text-success">Total Buyleads</h4>
+                       <h5>5645646</h5>
                      </div>
                   </div>
                </div>
@@ -82,17 +66,9 @@ include "include1/header.php";
                      <div class="social_icon">
                         <i class="fa fa-google-plus"></i>
                      </div>
-                     <div class="social_cont">
-                        <ul>
-                           <li>
-                              <span><strong>450</strong></span>
-                              <span>Followers</span>
-                           </li>
-                           <li>
-                              <span><strong>57</strong></span>
-                              <span>Circles</span>
-                           </li>
-                        </ul>
+                     <div class=" text-center my-3">
+                        <h4 class="text-success">Total Buyleads</h4>
+                       <h5>5645646</h5>
                      </div>
                   </div>
                </div>
@@ -130,23 +106,23 @@ include "include1/header.php";
          <div class="col-lg-6 mb-4">
             <h5>Personal Information</h5>
             <div class="alert alert-warning h-100 mt-3">
-             <ul>
-               <li class="fw-bold my-2">Name : Shalini</li>
-               <li class="fw-bold my-2">Email : BC@GMAIL.COM </li>
-               <li class="fw-bold my-2">Phone Number : 345345345</li>
-               <li class="fw-bold my-2">Country : INDIA</li>
-             </ul>
+               <ul>
+                  <li class="fw-bold my-2">Name : Shalini</li>
+                  <li class="fw-bold my-2">Email : BC@GMAIL.COM </li>
+                  <li class="fw-bold my-2">Phone Number : 345345345</li>
+                  <li class="fw-bold my-2">Country : INDIA</li>
+               </ul>
             </div>
          </div>
          <div class="col-lg-6 mb-4">
             <h5>Company Details</h5>
             <div class="alert alert-success h-100 mt-3">
-             <ul>
-               <li class="fw-bold my-2">Company Name : Shalini</li>
-               <li class="fw-bold my-2">Service name / Product name : Shalini</li>
-               <li class="fw-bold my-2">GST Code : 54345345345354</li>
-               <li class="fw-bold my-2">IEC Details : Shalini</li>
-             </ul>
+               <ul>
+                  <li class="fw-bold my-2">Company Name : Shalini</li>
+                  <li class="fw-bold my-2">Service name / Product name : Shalini</li>
+                  <li class="fw-bold my-2">GST Code : 54345345345354</li>
+                  <li class="fw-bold my-2">IEC Details : Shalini</li>
+               </ul>
             </div>
          </div>
       </div>

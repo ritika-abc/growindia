@@ -1783,6 +1783,12 @@ button.main_bt {
 .task_list li:nth-child(1) {
     border-left-color: #ff9800;
 }
+.task_list_view  {
+   border-left: 3px solid #ff9800;
+}
+.task_list_view2  {
+   border-left: 3px solid #1ed085;
+}
 
 .task_list li:nth-child(2) {
     border-left-color: #2196f3;
