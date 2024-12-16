@@ -1,3 +1,15 @@
+   
+    <!-- footer -->
+    <div class="container-fluid">
+      <div class="footer">
+         <p>Copyright © 2025 Designed by Growindiaexport. All rights reserved.<br><br>
+            <a href="https://growindiaexport.com/">Growindiaexport</a>
+         </p>
+      </div>
+   </div>
+</div>
+
+   
    <!-- end dashboard inner -->
    </div>
          </div>

@@ -28,8 +28,8 @@ include "include1/header.php";
                            <li><a href="#">Your Plan</a><br><strong>Prime Pro</strong></li>
                            <li><a href="#">Email</a><br><strong>abc@gmail.com</strong></li>
                            <li><a href="#">Your Plan expire</a><br><strong>2024-06-24</strong></li>
-                          
-                         
+
+
                         </ul>
                      </div>
                      <div class="read_more">
@@ -99,8 +99,8 @@ include "include1/header.php";
             </div>
          </div>
       </div>
- 
-      <div class="row column2 graph margin_bottom_30">
+
+      <!-- <div class="row column2 graph margin_bottom_30">
          <div class="col-md-l2 col-lg-12">
             <div class="white_shd full">
                <div class="full graph_head">
@@ -121,21 +121,37 @@ include "include1/header.php";
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- end graph -->
-     
+
    </div>
-   <!-- footer -->
-   <div class="container-fluid">
-      <div class="footer">
-         <p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
-            Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
-         </p>
+   <div class="container-fluid bg-white py-4">
+      <div class="row">
+         <div class="col-lg-6 mb-4">
+            <h5>Personal Information</h5>
+            <div class="alert alert-warning h-100 mt-3">
+             <ul>
+               <li class="fw-bold my-2">Name : Shalini</li>
+               <li class="fw-bold my-2">Email : BC@GMAIL.COM </li>
+               <li class="fw-bold my-2">Phone Number : 345345345</li>
+               <li class="fw-bold my-2">Country : INDIA</li>
+             </ul>
+            </div>
+         </div>
+         <div class="col-lg-6 mb-4">
+            <h5>Company Details</h5>
+            <div class="alert alert-success h-100 mt-3">
+             <ul>
+               <li class="fw-bold my-2">Company Name : Shalini</li>
+               <li class="fw-bold my-2">Service name / Product name : Shalini</li>
+               <li class="fw-bold my-2">GST Code : 54345345345354</li>
+               <li class="fw-bold my-2">IEC Details : Shalini</li>
+             </ul>
+            </div>
+         </div>
       </div>
    </div>
-</div>
 
-
-<?php
-include "include1/footer.php";
-?>
+   <?php
+   include "include1/footer.php";
+   ?>
