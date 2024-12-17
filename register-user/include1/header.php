@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["user_name"])) {
+    header("Location:../supplier-register.php");
+}
+?>
+<?php
+if (isset($_SESSION["user_id"])) {
+    $user_id = $_SESSION["user_id"];
+}
+include "../config.php";
+$se = "SELECT * FROM `user` where `user_id`='$user_id'";
+$qu = mysqli_query($con, $se);
+while ($row = mysqli_fetch_array($qu)) {
+    $status = $row['status'];
+    $user_id = $row['user_id'];
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,12 +64,12 @@
                             <a href="index.html"><img class="logo_icon img-responsive" src="https://growindiaexport.com/logo/logo.png" alt="#" /></a>
                         </div>
                     </div>
-                    <div class="sidebar_user_info">
+                    <div class="sidebar_user_info px-2">
                         <div class="icon_setting"></div>
-                        <div class="user_profle_side">
-                            <div class="user_img"><img class="img-responsive" src="https://growindiaexport.com/logo/logo.png" alt="#" /></div>
-                            <div class="user_info">
-                                <h6>John David</h6>
+                        <div class="user_profle_side"> 
+                            
+                            <div class="user_info text-capitalize">
+                                <h6><?php echo $_SESSION["user_name"] ?> </h6>
                                 <p><span class="online_animation"></span> Online</p>
                             </div>
                         </div>
@@ -58,14 +79,14 @@
                     <h4>Admin Panel</h4>
                     <ul class="list-unstyled components">
                         <li class="active">
-                            <a href="../register-user/index-admin.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                            <a href="../register-user/index.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
                         </li>
                         <li><a href="../register-user/profile-view.php"><i class="fa fa-user yellow_color"></i> <span>Profile</span></a></li>
                         <li>
-                            <a href="#element"><i class="fa fa-diamond purple_color"></i> <span>Manage Products</span></a>
+                            <a href="../register-user/add-product.php"><i class="fa fa-diamond purple_color"></i> <span>Manage Products</span></a>
                         </li>
-                        <li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Products Tables</span></a></li>
-                        <li><a href="price.html"><i class="fa fa-briefcase blue1_color"></i> <span>All Buyleads</span></a></li>
+                        <li><a href="../register-user/view-product.php"><i class="fa fa-table purple_color2"></i> <span>Products Tables</span></a></li>
+                        <?php echo ($status == '1') ? '<li><a href="view-buyleads.php"> Buyleads</a></li>' : '<li><a href="all-buyleads.php"> Buyleads</a></li>'; ?>
                         <li> <a href="contact.html"> <i class="fa fa-paper-plane red_color"></i> <span>Refund Buylead</span></a> </li>
                         <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Access Buyleads</span></a></li>
                         <li><a href="settings.html"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
@@ -90,9 +111,9 @@
                                         <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
                                         <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
                                     </ul>
-                                    <ul class="user_profile_dd">
+                                    <ul class="user_profile_dd mx-2">
                                         <li>
-                                            <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="images/layout_img/user_img.jpg" alt="#" /><span class="name_user">John David</span></a>
+                                            <a class="dropdown-toggle" data-toggle="dropdown"> <span class="name_user"><?php echo $_SESSION["user_name"] ?> </span></a>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="profile.html">My Profile</a>
                                                 <a class="dropdown-item" href="settings.html">Settings</a>

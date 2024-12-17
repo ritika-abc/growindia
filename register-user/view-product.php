@@ -1,121 +1,82 @@
+<style>
+    .sp {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: #e97b01;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        font-weight: bold;
+        color: white;
+    }
+</style>
+
+
+
 <?php
-
-
-include_once "include/header.php";
-if (isset($_SESSION["user_email"])) {
-    $user_email = $_SESSION["user_email"];
-}
-// echo "<script>alert('Welcome : $user_email')</script>";
-
+include "include1/header.php";
 ?>
-<!-- page content -->
-<div class="right_col" role="main">
-    <!-- top tiles -->
-    <div class="row">
-       <div class="col-12">
-       <!-- <form action="" class="my-5  d-flex">
-            <input type="search" placeholder="Search Here By Product Name" name="search" class="form-control w-75 rounded float-end">
-            <input type="submit" class="btn-sm btn-success">
-        </form> -->
-       </div>
-        <div class="col-12">
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
             <div class="col-md-12">
-                <?php
-                include "config.php"; // database configuration
-                /* Calculate Offset Code */
-                $limit = 15;
-                if (isset($_GET['page'])) {
-                    $page = $_GET['page'];
-                } else {
-                    $page = 1;
-                }
-                $offset = ($page - 1) * $limit;
-                /* select query of user table with offset and limit */
-                $sql = "SELECT * FROM `free-listing-product` where `user_email` ='$user_email' ORDER BY 	pro_id DESC LIMIT {$offset},{$limit}";
-                $result = mysqli_query($con, $sql) or die("Query Failed.");
-                if (mysqli_num_rows($result) > 0) {
-                ?>
-                    <table class="table  table-striped table-light table">
-                        <thead>
-                            <th>S.No.</th>
-                            <th>Product Image</th>
-                            <th>Product Name</th>
-                            <th>Company Name</th>
-                            <th>Decsription</th>
-                            <th>Location</th>
-                            <th>Price</th>
-                            <th>Unit</th>
-                            <th>Email</th>
-                            <th>Edit</th>
-                          
-                        </thead>
-                        <tbody>
-                            <?php
-                            $serial = $offset + 1;
-                            while ($row = mysqli_fetch_assoc($result)) {
-                            ?>
-                                <tr>
-                                    <td class='id'><?php echo $serial; ?></td>
-                                    <td ><a href="<?php echo $row['img1']; ?>" target="_blanck" ><img src="<?php echo $row['img1']; ?>" height="50px" width="50px" alt=""> <small>Image View</small></a></td>
-                                    <td class=" text-capitalize"><?php echo $row['product_name']; ?></td>
-                                    <td class=" text-capitalize"><?php echo $row['company_name']; ?></td>
-                                    <td class=" text-capitalize"><?php echo $row['product_description']; ?></td>
-                                    <td class=" text-capitalize"><?php echo $row['location']; ?></td>
-                                    <td class=" text-capitalize"> <?php echo $row['price']; ?></td>
-                                    <td  ><?php echo $row['unit']; ?></td>
-                                    <td><?php echo $row['user_email']; ?></td>
-                                    <td ><a href="update_product.php?pro_id=<?php echo $row['pro_id'] ?>" class="btn btn-success" title="Edit" ><i class="fa-regular fa-pen-to-square"></i></a>
-                                    <a href="delete-product.php?pro_id=<?php echo $row['pro_id'] ?>" title="Delete" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a> </td>
-                                </tr>
-                            <?php
-                                $serial++;
-                            } ?>
-                        </tbody>
-                    </table>
-                <?php
-                } else {
-                    echo "<h3>No Results Found.</h3>";
-                }
-                // show pagination
-                $sql1 = "SELECT * FROM `free-listing-product`";
-                $result1 = mysqli_query($con, $sql1) or die("Query Failed.");
+                <div class="page_title">
+                    <h2>Dashboard </h2>
 
-                if (mysqli_num_rows($result1) > 0) {
+                </div>
 
-                    $total_records = mysqli_num_rows($result1);
-
-                    $total_page = ceil($total_records / $limit);
-
-                    echo '<ul class="pagination ">';
-                    if ($page > 1) {
-                        echo '<li class="page-item"><a class="page-link" href="view-product.php?page=' . ($page - 1) . '">Prev</a></li>';
-                    }
-                    for ($i = 1; $i <= $total_page; $i++) {
-                        if ($i == $page) {
-                            $active = "activebtn";
-                        } else {
-                            $active = " ";
-                        }
-                        echo '<li class="page-item' . $active . '"><a class="page-link"  href="view-product.php?page=' . $i . '">' . $i . '</a></li>';
-                    }
-                    if ($total_page > $page) {
-                        echo '<li class="page-item"><a class="page-link" href="view-product.php?page=' . ($page + 1) . '">Next</a></li>';
-                    }
-
-                    echo '</ul>';
-                }
-                ?>
             </div>
         </div>
+        <?php
+        include "nav.php"; ?>
+
+        <section class="mt-5">
+            <h4 class="my-3  text-wh ite p-3"  >Manage Your Products</h4>
+            <hr>
+            <div class="container-fluid my-3 my-4" style="position:relative">
+                <div class="row    ">
+                    <div class="col-lg-12 ">
+                        <div class="dash_blog">
+                            <div class="dash_blog_inner border ">
+                                <div class="container-fluid ">
+                                    <div class="box_view  my-3">
+                                        <div class="row">
+                                            <div class="col-lg-3 my-2 text-center">
+                                                <img src="../Assam.jpg" height="200px" width="200px" style="object-fit: cover;" class="rounded" alt="">
+                                            </div>
+                                            <div class="col-lg-9 my-2">
+                                                <div class="border px-3 h-100">
+                                                    <ul class="nav">
+                                                        <li class="nav-item"><a href="" class="nav-link">yoyo</a></li>
+                                                        <li class="nav-item"><a href="" class="nav-link">kush@gmail.com</a></li>
+                                                    </ul>
+                                                    <h4>my product name</h4>
+                                                    <p><i class="fa fa-rupee"></i> 435345</p>
+                                                    <div class=" " style="height: 50px;overflow-x:auto">
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, debitis! Sit, asperiores! Libero nam repellat vero dolorem magni architecto quasi.</p>
+                                                    </div>
+                                                    <a href="" class="btn btn-success"><i class="fa fa-edit"></i> Edit</a>
+                                                    <a href="" class="btn btn-danger">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp ">1</div>
+            </div>
+        </section>
     </div>
 </div>
-<br />
-</div>
 
 
-
-
-<!-- /page content -->
 <?php
-include_once "include/footer.php";
+include "include1/footer.php";
 ?>
