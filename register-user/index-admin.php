@@ -108,7 +108,7 @@ include "include1/header.php";
             <div class="alert alert-warning h-100 mt-3">
                <ul>
                   <li class="fw-bold my-2">Name : Shalini</li>
-                  <li class="fw-bold my-2">Email : BC@GMAIL.COM </li>
+                  <li class="fw-bold my-2">Email : aBC@GMAIL.COM </li>
                   <li class="fw-bold my-2">Phone Number : 345345345</li>
                   <li class="fw-bold my-2">Country : INDIA</li>
                </ul>
@@ -131,3 +131,5 @@ include "include1/header.php";
    <?php
    include "include1/footer.php";
    ?>
+
+

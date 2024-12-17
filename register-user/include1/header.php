@@ -59,23 +59,15 @@
                     <ul class="list-unstyled components">
                         <li class="active">
                             <a href="../register-user/index-admin.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
-
                         </li>
                         <li><a href="../register-user/profile-view.php"><i class="fa fa-user yellow_color"></i> <span>Profile</span></a></li>
                         <li>
                             <a href="#element"><i class="fa fa-diamond purple_color"></i> <span>Manage Products</span></a>
-
                         </li>
                         <li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Products Tables</span></a></li>
-
                         <li><a href="price.html"><i class="fa fa-briefcase blue1_color"></i> <span>All Buyleads</span></a></li>
-                        <li>
-                            <a href="contact.html">
-                                <i class="fa fa-paper-plane red_color"></i> <span>Refund Buylead</span></a>
-                        </li>
-                        
+                        <li> <a href="contact.html"> <i class="fa fa-paper-plane red_color"></i> <span>Refund Buylead</span></a> </li>
                         <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Access Buyleads</span></a></li>
-                    
                         <li><a href="settings.html"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
                     </ul>
                 </div>
