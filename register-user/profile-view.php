@@ -154,12 +154,12 @@ if (isset($_POST['submit'])) {
                                             </div>
                                             <div class="col-lg-6 my-3 ">
                                                 <div class="">
-                                                    <label for="" class=" text-danger">Primary Business*</label>
+                                                    <label for="" class=" text-danger">Main Primary Business*</label>
                                                     <select name="type" class="form-control" id="">
                                                         <option value="">----- Select Primary Business -----</option>
                                                         <option value="exporter" <?php if ($type == 'exporter') echo "selected"; ?>>Exporter</option>
                                                         <option value="supplier" <?php if ($type == 'supplier') echo "selected"; ?>>Supplier</option>
-                                                        <option value="Manufacturer" <?php if ($type == 'manufacturer') echo "selected"; ?>>Manufacturer</option>
+                                                        <option value="manufacturer" <?php if ($type == 'manufacturer') echo "selected"; ?>>Manufacturer</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -177,7 +177,7 @@ if (isset($_POST['submit'])) {
                                                     <div class="d-flex">
                                                         <input type="file" name="image" value="<?php echo $image; ?>" class="form-control w-50" placeholder="Company's Logo">
                                                         <img src="<?php echo $image ?>" height="auto" width="30%" alt="<?php echo $image ?>">
-                                                        <p><?php echo $image; ?></p>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -479,6 +479,14 @@ if (isset($_POST['submit'])) {
                                     <div class="row">
                                         <div class="read_more">
                                             <div class="center"><input class="main_bt read_bt" type="submit" name="submit"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="read_more">
+                                            <?php
+
+                                            include "live-search/ind.php";
+                                            ?>
                                         </div>
                                     </div>
                                     <!-- details 2  profile-->

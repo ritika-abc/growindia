@@ -8,11 +8,11 @@ $user_email =  $_SESSION["user_email"];
 
 $sel = "SELECT * FROM `user` where `user_email`='$user_email'";
 $q = mysqli_query($con, $sel);
-while ($row = mysqli_fetch_array($q)) {
+while ($row2 = mysqli_fetch_array($q)) {
 
 
 ?>
- 
+
    <div class="midde_cont">
       <div class="container-fluid">
          <div class="row column_title">
@@ -37,9 +37,9 @@ while ($row = mysqli_fetch_array($q)) {
                         </div>
                         <div class="task_list_main">
                            <ul class="task_list">
-                              <li><a href="#">Your Plan</a><br><strong><?php echo $row["plan"] ?> </strong></li>
-                              <li><a href="#">Email</a><br><strong><?php echo $row["user_email"] ?></strong></li>
-                              <li><a href="#">Your Plan expire</a><br><strong> <?php echo $row["expire"] ?></strong></li>
+                              <li><a href="#">Your Plan</a><br><strong><?php echo $row2["plan"] ?> </strong></li>
+                              <li><a href="#">Email</a><br><strong><?php echo $row2["user_email"] ?></strong></li>
+                              <li><a href="#">Your Plan expire</a><br><strong> <?php echo $row2["expire"] ?></strong></li>
 
 
                            </ul>
@@ -54,29 +54,66 @@ while ($row = mysqli_fetch_array($q)) {
                   <div class="col-12 mb-4">
                      <div class="full socile_icons fb margin_bottom_30">
                         <div class="social_icon">
-                           <i class="fa fa-facebook"></i>
+                           <i class="fa fa-book"></i>
                         </div>
                         <div class=" text-center my-3">
-                           <h4 class="text-success">Total Buyleads</h4>
-                           <h5>5645646</h5>
+                        <?php
+                           $sql_limit = "SELECT `buyleads_id`, COUNT(buyleads_id ) AS p, `buyleads_id`  FROM `buyleads`";
+                           $result = $con->query($sql_limit);
+                           while ($row = $result->fetch_assoc()) {
+                              $p = $row['p'];
+                           }
+                           ?>
+                           <h4 class="text-success">Accessed Buyleads</h4>
+                           <?php
+
+
+                           
+
+                           $sql = "SELECT `limit_id`, COUNT(limit_id) AS buyleads, `limit_id`  FROM `limit_buylead` WHERE   `user_email`='$user_email'";
+                           $result = $con->query($sql);
+                           if ($result->num_rows > 0) {
+                              // output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <h5><?php echo $row['buyleads'] . " / ".$p; ; ?></h5>
+                           <?php
+                              }
+                           }
+                           ?>
                         </div>
                      </div>
                   </div>
                   <div class="col-12 mb-4">
                      <div class="full socile_icons tw margin_bottom_30">
                         <div class="social_icon">
-                           <i class="fa fa-twitter"></i>
+                           <i class="fa  fa-bullhorn"></i>
                         </div>
                         <div class=" text-center my-3">
-                           <h4 class="text-success">Total Buyleads</h4>
-                           <h5>5645646</h5>
+                           <h4 class="text-success">Add Products</h4>
+                         
+                           <?php
+
+ 
+
+                           $sql = "SELECT `pro_id`, COUNT(pro_id) AS products, `pro_id`  FROM `free-listing-product` WHERE   `user_email`='$user_email'";
+                           $result = $con->query($sql);
+                           if ($result->num_rows > 0) {
+                              // output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <h5><?php echo $row['products'] ?></h5>
+                           <?php
+                              }
+                           }
+                           ?>
                         </div>
                      </div>
                   </div>
                   <div class="col-12 mb-4">
                      <div class="full socile_icons google_p margin_bottom_30">
                         <div class="social_icon">
-                           <i class="fa fa-google-plus"></i>
+                           <i class="fa fa-star"></i>
                         </div>
                         <div class=" text-center my-3">
                            <h4 class="text-success">Total Buyleads</h4>
@@ -119,10 +156,10 @@ while ($row = mysqli_fetch_array($q)) {
                <h5>Personal Information</h5>
                <div class="alert alert-warning h-100 mt-3">
                   <ul>
-                     <li class="fw-bold my-2">Name : <?php echo $row["user_name"] ?></li>
-                     <li class="fw-bold my-2">Email : <?php echo $row["user_email"] ?></li>
-                     <li class="fw-bold my-2">Phone Number : <?php echo $row["user_phone"] ?></li>
-                     <li class="fw-bold my-2">Country  : <?php echo $row["country_name"] ?></li>
+                     <li class="fw-bold my-2">Name : <?php echo $row2["user_name"] ?></li>
+                     <li class="fw-bold my-2">Email : <?php echo $row2["user_email"] ?></li>
+                     <li class="fw-bold my-2">Phone Number : <?php echo $row2["user_phone"] ?></li>
+                     <li class="fw-bold my-2">Country : <?php echo $row2["country_name"] ?></li>
                   </ul>
                </div>
             </div>
@@ -130,19 +167,19 @@ while ($row = mysqli_fetch_array($q)) {
                <h5>Company Details</h5>
                <div class="alert alert-success h-100 mt-3">
                   <ul>
-                  <li class="fw-bold my-2"><img src="<?php   echo $row['image'] ?>" height="auto" width="30%" alt="<?php echo $row["company_name"] ?>"> </li>
-                     <li class="fw-bold my-2">Company Name : <?php echo $row["company_name"] ?></li>                     
-                     <li class="fw-bold my-2">GST Code : <?php echo $row["gst"] ?></li>
-                     <li class="fw-bold my-2">IEC Details : <?php echo $row["iec_code"] ?></li>
-                     <li class="fw-bold my-2">Address : <?php echo $row["company_address"] ?></li>
-                     
+                     <li class="fw-bold my-2"><img src="<?php echo $row2['image'] ?>" height="auto" width="30%" alt="<?php echo $row["company_name"] ?>"> </li>
+                     <li class="fw-bold my-2">Company Name : <?php echo $row2["company_name"] ?></li>
+                     <li class="fw-bold my-2">GST Code : <?php echo $row2["gst"] ?></li>
+                     <li class="fw-bold my-2">IEC Details : <?php echo $row2["iec_code"] ?></li>
+                     <li class="fw-bold my-2">Address : <?php echo $row2 ["company_address"] ?></li>
+
                   </ul>
                </div>
             </div>
          </div>
       </div>
    </div>
- 
+
 <?php } ?>
 <?php
 include "include1/footer.php";

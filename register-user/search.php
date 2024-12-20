@@ -1,7 +1,7 @@
 <?php
 
 
-include_once "include/header.php";
+include_once "include1/header.php";
 
 
 // form 1
@@ -12,7 +12,7 @@ include "config.php";
 
 ?>
 <!-- page content -->
-<div class="right_col" role="main">
+<div class="container-fluid" role="main">
     <!-- top tiles -->
     <div class="row ">
         <div class="col-12">
@@ -74,10 +74,10 @@ include "config.php";
                     while ($row2 = $result->fetch_assoc()) {
                         // echo "<li>" . $row["product_name"] . "</li>"; // Display the result here
                 ?>
-                        <div class="col-12 my-3 ">
+                        <div class="col-12 my-5 ">
                             <div class="row">
                                 <div class="col-lg-9 ">
-                                    <div class="buyleads_cards p-3 shadow-lg bg-white rounded border-start border-dark text-capitalize" style=" ">
+                                    <div class="buyleads_cards p-3 shadow-lg bg-white rounded   border-dark text-capitalize" style="border:1px solid black">
                                         <!--<h6>Product Name : ?php echo $product_name ?></h6>-->
                                         <h5 class=" " style="color :#2f3394;font-weight: bold;"><?php echo $row2['queiry_for'] ?> <img src="trusted.png" alt="" height="auto" width="10%"> </h5>
                                         <ul class="nav justify-content-between ">
@@ -190,5 +190,5 @@ include "config.php";
 
 <!-- /page content -->
 <?php
-include_once "include/footer.php";
+include_once "include1/footer.php";
 ?>

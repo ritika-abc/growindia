@@ -49,14 +49,14 @@ $con->close();
 <?php
 
 
-include_once "include/header.php";
+include_once "include1/header.php";
 
 ?>
 
 
 <!-- new data -->
 <div class="right_col" role="main">
-    <div class="container mt-5">
+    <div class="container-fluid my-5">
         <div class="row  justify-content-center">
             <div class="col-7">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="" enctype="multipart/form-data" method="post">
@@ -96,5 +96,5 @@ include_once "include/header.php";
 
 <!-- /page content -->
 <?php
-include_once "include/footer.php";
+include_once "include1/footer.php";
 ?>

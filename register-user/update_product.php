@@ -9,7 +9,7 @@
 
 ob_start();
 
-include_once "include/header.php";
+include_once "include1/header.php";
 include "config.php";
 
 ?>
@@ -52,16 +52,19 @@ if (isset($_POST['submit'])) {
     $state_name = $_POST['state_name'];
     $location = $_POST['location'];
     $countries_name = $_POST['countries_name'];
+
     // Handle image uploads
-    $img1 = $row['img1'];
+    $img1 = $row['img1']; // Default image if no new image is uploaded
 
-
+    // Check if a new image is uploaded
     if ($_FILES["img1"]["name"]) {
-        $img1 = $_FILES["img1"]["name"];
+        // Create a unique image name with time() for uniqueness
+        $img1 =  time() . "_" . $_FILES["img1"]["name"];
         $fld1 = "user-product-image/" . $img1;
+
+        // Move the uploaded file to the desired folder
         move_uploaded_file($_FILES["img1"]["tmp_name"], $fld1);
     }
-
 
     // Update query
     $sql = "UPDATE `free-listing-product` SET 
@@ -72,24 +75,26 @@ if (isset($_POST['submit'])) {
             `company_name`='$company_name',                     
             `state_name`='$state_name',
             `user_email`='$user_email',
-             `state_name`='$state_name',
-             `countries_name`='$countries_name',
-            `location`='$location'           ";
+            `state_name`='$state_name',
+            `countries_name`='$countries_name',
+            `location`='$location'";
 
     // Append image fields if they are updated
     if ($_FILES["img1"]["name"]) {
         $sql .= ", `img1`='$fld1'";
     }
 
-
     $sql .= " WHERE `pro_id`='$pro_id'";
 
+    // Execute the query
     $query1 = mysqli_query($con, $sql);
 
     if ($query1) {
+        // Redirect to the view page after success
         header("location:view-product.php");
         exit();
     } else {
+        // Error message if the update fails
         echo "Error updating product: " . mysqli_error($con);
     }
 }
@@ -108,14 +113,14 @@ if (isset($_POST['submit'])) {
         opacity: 0
     }
 </style> -->
-<div class="right_col" role="main">
-    <div class="container">
+<div class="  my-5" role="main">
+    <div class="container-fluid my-5">
 
         <div class="row justify-content-center">
             <div class="col-10 bg-white p-4">
                 <form action="" method="post" enctype="multipart/form-data" class="text-capitalize">
                     <h5>Update Your products </h5>
-                    <img src="../image/logo.png" height="60px" width="200px" alt="">
+                     
                     <div class="row">
                         <div class="col-12 col-lg-6 my-2">
                             <label for="" class=" ">product name</label>
@@ -125,7 +130,7 @@ if (isset($_POST['submit'])) {
                             <label for="" class=" ">company name</label>
                             <input type="text" name="company_name" value="<?php echo $company_name ?>" class="form-control">
                         </div>
-                        <div class="col-12 col-lg-6 my-2">
+                        <div class="col-12 col-lg-6 my-2 h-100">
                             <label for=""> Product image </label>
                             <div class="row">
                                 <div class="col-12">
@@ -137,11 +142,17 @@ if (isset($_POST['submit'])) {
 
                                         </div>
                                         <div class="col-12">
-                                            <img src="<?php echo $row['img1']; ?>" height="auto" class="border rounded p-2" width="100%" alt="">
+                                          
+                                            <img src="<?php echo $row['img1']; ?>" height="auto" class="border rounded p-2" width="50%" alt="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-12 col-lg-6 my-2 h-100">
+                        <label for="">Product Description</label>
+                            <textarea name="product_description" class="form-control" rows="5"><?php echo $product_description ?></textarea>
+
                         </div>
                         <div class="col-12 col-lg-6 my-2">
                             <label for=""> Price </label>
@@ -433,7 +444,7 @@ if (isset($_POST['submit'])) {
                         <div class="col-12">
                             <hr>
                         </div>
-                        <h5 class="mt-3">Product Details</h5>
+                        
                         <div class="col-12 my-2">
                             <label for="">Product Description</label>
                             <textarea name="product_description" class="form-control" rows="5"><?php echo $product_description ?></textarea>
@@ -549,7 +560,7 @@ if (isset($_POST['submit'])) {
 <!-- /page content -->
 <?php
 
-include_once "include/footer.php";
+include_once "include1/footer.php";
 ob_end_flush();
 
 ?>

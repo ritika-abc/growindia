@@ -1,7 +1,7 @@
 <?php
 
 
-include_once "include/header.php";
+include_once "include1/header.php";
 
 
 // form 1
@@ -19,11 +19,11 @@ include "config.php";
 
 ?>
 <!-- page content -->
-<div class="right_col" role="main">
+<div class="container-fluid" role="main">
     <!-- <ul class=" nav w-100 justify-content-center bg- border bg-white text-capitalize ">-->
     <!--    <li class="nav-item"><a href="" class="nav-link text- "><b>All Types Of buylead</b></a></li>-->
     <!--    <li class="nav-item"><a href="https://growindiaexport.com/register-user/show-buyleads.php" class="nav-link text- "><b>Access Buyleads</b></a></li>-->
-      
+
     <!--</ul>-->
     <!-- top tiles -->
     <div class="row">
@@ -34,7 +34,7 @@ include "config.php";
             </form>
         </div>
 
- 
+
 
 
         <?php
@@ -47,7 +47,7 @@ include "config.php";
             while ($row2 = mysqli_fetch_array($query)) {
                 # to select all the data
 
-                 $product_name  = $row2['product_name'];
+                $product_name  = $row2['product_name'];
             }
         }
 
@@ -94,7 +94,7 @@ include "config.php";
                                         </div>
                                         <div class="row   text-capitalize">
                                             <div class="col-6">
-                                                <p class="m-0 p-0" style="color: #055faf;"><b>Mode Of Payment:    </b></p>
+                                                <p class="m-0 p-0" style="color: #055faf;"><b>Mode Of Payment: </b></p>
                                             </div>
                                             <div class="col-6">
                                                 <p class="m-0 p-0 text-dark"> <?php echo $row['payment_mode'] ?> </p>
@@ -105,7 +105,7 @@ include "config.php";
                                     <div class="col-lg-6">
                                         <div class="row   text-capitalize">
                                             <div class="col-6">
-                                                <p class="m-0 p-0" style="color: #055faf;"><b>Mobile Number : </b></p>
+                                                <p class="m-0 p-0 " style="color: #055faf;"><b>Mobile Number : </b></p>
                                             </div>
                                             <div class="col-6">
                                                 <p class="m-0 p-0 text-dark"> +91-99*********00 </p>
@@ -145,17 +145,7 @@ include "config.php";
         <?php }
         } ?>
 
-        <!--<div class="row fixed-bottom">-->
-        <!--    <div class="col-12 bg-white">-->
-        <!--        <marquee behavior="" direction="">-->
-        <!--            <p> <a href=" " class="text-danger mx-3"> $ Note : PRIME PLAN 10-Buy Leads Everymonth</a> ||-->
-        <!--                <a href=" " class="text-primary mx-3">Note : PRIME PRO PLAN 30-Buy Leads Everymonth</a> ||-->
-        <!--                <a href=" " class="text-success mx-3">Note : ULTRA PLAN 60-Buy Leads Everymonth</a> ||-->
-        <!--                <a href=" " class="text-warning mx-3">Note : ULTRA PRO PLAN 60-Buy Leads Everymonth</a>-->
-        <!--            </p>-->
-        <!--        </marquee>-->
-        <!--    </div>-->
-        <!--</div>-->
+        
     </div>
 </div>
 
@@ -165,5 +155,5 @@ include "config.php";
 
 <!-- /page content -->
 <?php
-include_once "include/footer.php";
+include_once "include1/footer.php";
 ?>

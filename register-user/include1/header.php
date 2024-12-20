@@ -86,10 +86,11 @@ while ($row = mysqli_fetch_array($qu)) {
                             <a href="../register-user/add-product.php"><i class="fa fa-diamond purple_color"></i> <span>Manage Products</span></a>
                         </li>
                         <li><a href="../register-user/view-product.php"><i class="fa fa-table purple_color2"></i> <span>Products Tables</span></a></li>
-                        <?php echo ($status == '1') ? '<li><a href="view-buyleads.php"> Buyleads</a></li>' : '<li><a href="all-buyleads.php"> Buyleads</a></li>'; ?>
-                        <li> <a href="contact.html"> <i class="fa fa-paper-plane red_color"></i> <span>Refund Buylead</span></a> </li>
-                        <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Access Buyleads</span></a></li>
-                        <li><a href="settings.html"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
+                        <?php echo ($status == '1') ? '<li><a href="view-buyleads.php">  <i class="fa  fa-globe purple_color2"></i>  Buyleads</a></li>' : '<li><a href="all-buyleads.php"> <i class="fa  fa-globe purple_color2"></i>  Buyleads</a></li>'; ?>
+                        <li><a href="../register-user/show-buyleads.php"><i class="fa  fa-bar-chart-o purple_color2"></i> <span>Access Buyleads</span></a></li>
+                        <li> <a href="../register-user/refund-buylead.php"> <i class="fa fa-paper-plane red_color"></i> <span>Refund Buylead</span></a> </li>
+                        
+                        
                     </ul>
                 </div>
             </nav>
@@ -116,9 +117,8 @@ while ($row = mysqli_fetch_array($qu)) {
                                             <a class="dropdown-toggle" data-toggle="dropdown"> <span class="name_user"><?php echo $_SESSION["user_name"] ?> </span></a>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="profile.html">My Profile</a>
-                                                <a class="dropdown-item" href="settings.html">Settings</a>
-                                                <a class="dropdown-item" href="help.html">Help</a>
-                                                <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                            
+                                                <a class="dropdown-item" href="../register-user/logout.php"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                             </div>
                                         </li>
                                     </ul>

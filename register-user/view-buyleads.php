@@ -1,7 +1,7 @@
 <?php
 
 
-include_once "include/header.php";
+include_once "include1/header.php";
 
 
 // form 1
@@ -19,7 +19,7 @@ include "config.php";
 
 ?>
 <!-- page content -->
-<div class="right_col" role="main">
+<div class="Container-fluid" role="main">
     <!-- top tiles -->
     <div class="row">
         <div class="col-12">
@@ -42,7 +42,7 @@ include "config.php";
                 # to select all the data
 
                 $product_name  = $row2['product_name'];
-                $plan1  = $row2['plan'];
+                 $plan1  = $row2['plan'];
             }
         }
 
@@ -75,35 +75,7 @@ include "config.php";
                                     <li class="nav-item"><?php echo $row['accessed_at'] ?></li>
                                      
                                 </ul>
-                                <!--<div class="row mt-3 table-borderless">-->
-                                <!--    <div class="col-lg-6">-->
-                                <!--        <table class="table p-0 m-0">-->
-                                <!--            <tr class=" p-0 ">-->
-                                <!--                <th class=" p-0 m-0  " style="color:#055faf;">Buyer Name :</th>-->
-                                <!--                <td class=" p-0 m-0"> <?php //echo $row['buyer_name'] ?></td>-->
-                                <!--            </tr>-->
-                                <!--            <tr class=" p-0 ">-->
-                                <!--                <th class=" p-0 m-0 " style="color:#055faf;">Quantity : </th>-->
-                                <!--                <td class=" p-0 m-0"><?php// echo $row['quantity'] ?></td>-->
-                                <!--            </tr>-->
-                                          
-
-                                <!--        </table>-->
-                                <!--    </div>-->
-                                <!--    <div class="col-lg-6">-->
-                                <!--        <table class="table p-0 m-0">-->
-                                <!--            <tr class=" p-0 ">-->
-                                <!--                <th class=" p-0 m-0 " style="color:#055faf;">Mobile Number :</th>-->
-                                <!--                <td class=" p-0 m-0"> +91-99*********00</td>-->
-                                <!--            </tr>-->
-                                <!--            <tr class=" p-0 ">-->
-                                <!--                <th class=" p-0 m-0 " style="color:#055faf;">Buyer Email : </th>-->
-                                <!--                <td class=" p-0 m-0 text-lowercase">***@gmail.com</td>-->
-                                <!--            </tr>-->
-
-                                <!--        </table>-->
-                                <!--    </div>-->
-                                <!--</div>-->
+                                
                                 
                                 
                                 <div class="row  mt-3 table-borderless">
@@ -204,5 +176,5 @@ include "config.php";
 
 <!-- /page content -->
 <?php
-include_once "include/footer.php";
+include_once "include1/footer.php";
 ?>
